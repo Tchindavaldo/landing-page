@@ -1,0 +1,49 @@
+h3, p, a, img {
+       position: relative;
+       z-index: 10;
+}
+
+.service-box_wrapp.mb-4 {
+       flex-wrap: nowrap;
+       display: flex;
+}
+ 
+/* Effet de survol de la carte */
+.card {
+       position: relative;
+       overflow: hidden;
+       transition: background-color 0.3s ease, color 0.3s ease
+}
+
+/* Animation pour l'apparition de la couleur de fond */
+.card::before {
+       content: '';
+       position: absolute;
+       top: 100%;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: #F68B21;
+       transition: top 0.3s ease-in-out;
+       z-index: 1;
+       /* Assurez-vous que la couleur de fond passe derrière le contenu */
+       display: block;
+       /* S'assurer que le pseudo-élément occupe tout l'espace de la carte */
+}
+
+  
+.service-box_number {
+       visibility: hidden;
+       opacity: 0;
+       color: #ffffff86;
+       /* Fixe la couleur du nombre à un bleu spécifique */
+}
+
+.slick-slide {
+       margin: 0 10px;
+       /* Espace de 10px à gauche et à droite de chaque élément */
+}
+
+.card {
+       height: 290 !important;
+}

@@ -1,0 +1,30 @@
+.card {
+       background-color: #1037B6 !important;
+       color: white;
+       box-shadow: none !important;
+}
+
+.ctn-gnl {
+       background-image: url(https://logisticcargoexpress.com/wp-content/uploads/2023/06/counter_bg_2.jpg);
+       background-position: center center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       padding-bottom: 100px;
+}
+
+
+@media (max-width: 768px) {
+       .ctn-gnl {
+              overflow-x: hidden !important;
+       }
+}
+
+/* .ctn-gnl::after {
+       content: "";
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       height: 100%;
+       background: rgba(18, 18, 18, 0.8);
+} */

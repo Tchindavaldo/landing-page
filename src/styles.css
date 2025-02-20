@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tiny-slider/dist/tiny-slider.css';
+
+body, html {
+       height: 100%;
+}
+
+.elementor-section {
+       position: relative;
+}
+
+.elementor-element {
+       --flex-direction: initial;
+       --flex-wrap: initial;
+       --justify-content: initial;
+       --align-items: initial;
+       --align-content: initial;
+       --gap: initial;
+       --flex-basis: initial;
+       --flex-grow: initial;
+       --flex-shrink: initial;
+       --order: initial;
+       --align-self: initial;
+       flex-basis: var(--flex-basis);
+       flex-grow: var(--flex-grow);
+       flex-shrink: var(--flex-shrink);
+       order: var(--order);
+       align-self: var(--align-self);
+}
+
+.elementor *, .elementor :after, .elementor :before {
+       box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+       .elementor-column.elementor-col-50, .elementor-column[data-col="50"] {
+              width: 50%;
+       }
+}
+
+
+.fs-5 {
+       font-size: 0.95rem !important;
+}
+
+
+@media (max-width: 768px) {
+       section {
+              overflow-x: hidden !important;
+       }
+}

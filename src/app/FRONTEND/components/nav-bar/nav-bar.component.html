@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark "
+       style="background-color: #1037B6;">
+       <div class="container-fluid d-flex justify-content-between">
+              <!-- Bouton Hamburger (visible sur mobile) -->
+              <button class="navbar-toggler" type="button" (click)="openMenu()">
+                     <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- Logo ou texte à gauche -->
+              <!-- Menu de navigation visible sur grand écran (non mobile) -->
+              <div class="d-none d-lg-block">
+                     <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                   <a class="nav-link" href="#">
+                                          Maison</a>
+                            </li>
+                            <li class="nav-item">
+                                   <a class="nav-link" href="#">
+                                          Paquet de suivi</a>
+                            </li>
+                            <li class="nav-item">
+                                   <a class="nav-link" href="#">
+                                          Contact</a>
+                            </li>
+                     </ul>
+              </div>
+              <!-- Icône de recherche (visible uniquement sur mobile) -->
+              <button class="btn btn-light d-lg-none">
+                     <i class="fas fa-search"></i>
+              </button>
+       </div>
+</nav>
+
+<!-- Menu mobile, affiché seulement quand il n'est pas complètement fermé -->
+<div *ngIf="menuState !== 'closed'" class="themeholy-menu-area"
+       [ngClass]="{'show': menuState === 'open', 'hide': menuState === 'closing'}"
+       id="mobileMenu">
+       <button class="themeholy-menu-toggle" (click)="closeMenu()">
+              <i class="fas fa-times"></i>
+       </button>
+       <div class="mobile-logo">
+              <a class="logo" href="https://logisticcargoexpress.com/">
+                     <img
+                            src="https://logisticcargoexpress.com/wp-content/uploads/2024/11/cc00a128f07627f362bdc7cfcd6ee4ef-removebg-preview.png"
+                            alt="Logo" class="img-fluid">
+              </a>
+       </div>
+       <div class="themeholy-mobile-menu">
+              <ul>
+                     <li><a href="https://logisticcargoexpress.com/"
+                                   aria-current="page"><i
+                                          class="fas fa-arrow-right"></i>
+                                   Maison</a></li>
+                     <li><a
+                                   href="https://logisticcargoexpress.com/track-form/"><i
+                                          class="fas fa-arrow-right"></i> Paquet
+                                   de suivi</a></li>
+                     <li><a
+                                   href="https://logisticcargoexpress.com/contact-2/"><i
+                                          class="fas fa-arrow-right"></i>
+                                   Contact</a></li>
+              </ul>
+       </div>
+</div>
