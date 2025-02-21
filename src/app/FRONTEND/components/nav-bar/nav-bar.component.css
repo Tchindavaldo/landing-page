@@ -150,3 +150,6 @@
        transform: translateX(5px);
 }
 
+a{
+       cursor: pointer;
+}

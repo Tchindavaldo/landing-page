@@ -1,0 +1,177 @@
+.contact-info {
+       display: -webkit-box;
+       display: -webkit-flex;
+       display: -ms-flexbox;
+       display: flex;
+       -webkit-flex-wrap: wrap;
+       -ms-flex-wrap: wrap;
+       flex-wrap: wrap;
+       gap: 20px;
+       border-bottom: 1px solid rgba(18, 18, 18, 0.1);
+       padding-bottom: 30px;
+       margin-bottom: 30px;
+       max-width: 320px;
+}
+
+.themeholy-btn:after {
+       content: "";
+       position: absolute;
+       height: 0%;
+       right: 50%;
+       top: 50%;
+       width: 100%;
+       z-index: -1;
+       -webkit-transition: all 0.75s ease 0s;
+       transition: all 0.75s ease 0s;
+}
+
+.themeholy-btn {
+       background-color: #F68B21;
+       color: white;
+}
+
+i {
+       color: #F68B21;
+}
+
+.rounded-circle {
+       background-color: #F68B21;
+       color: white;
+}
+
+.rounded-circle i {
+
+       color: white;
+       border-color: #F68B21 !important;
+}
+
+a {
+       color: black !important;
+       text-decoration: none;
+}
+
+a:hover {
+       color: #F68B21 !important;
+}
+
+.breadcumb-menu {
+       position: relative;
+       max-width: 100%;
+       padding: 0;
+       list-style-type: none;
+       margin: 0;
+       background-color: white;
+       min-width: 360px;
+       display: inline-block;
+       min-height: 30px;
+       line-height: 30px;
+       padding: 15px 120px;
+       margin-bottom: -1px;
+       -webkit-clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);
+       clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);
+}
+
+.breadcumb-wrapper {
+       background-repeat: no-repeat;
+       background-position: center center;
+       background-image: url('https://logisticcargoexpress.com/wp-content/uploads/2023/04/breadcumb-bg.jpg');
+       background-size: cover;
+}
+
+
+.breadcumb-title {
+       color: white;
+       margin: -0.18em 0 -0.14em 0;
+       line-height: 1.1;
+       padding-bottom: 110px;
+}
+
+.breadcumb-wrapper {
+       background-color: #121212;
+       padding: 110px 0 0 0;
+       text-align: center;
+}
+
+
+
+.breadcumb-menu li a:after {
+       content: "\f101";
+       position: relative;
+       margin-left: 10px;
+       font-weight: 600;
+       font-size: 15px;
+       color: #F68B21;
+       font-family: "Font Awesome 6 free";
+}
+
+.breadcumb-menu li {
+       display: inline-block;
+       margin-right: 3px;
+       padding-right: 5px;
+       font-family: black !;
+       font-weight: 700;
+       font-size: 16px;
+       line-height: 26px;
+       list-style: none;
+       position: relative;
+       color: black;
+}
+
+
+.breadcumb-menu li:last-child {
+       padding-right: 0;
+       margin-right: 0;
+}
+
+.breadcumb-menu a, .breadcumb-menu span {
+       white-space: normal;
+       color: inherit;
+       word-break: break-word;
+       font-weight: 400;
+       font-size: 18px;
+       color: #F68B21;
+}
+
+@media (max-width: 1199px) {
+       .breadcumb-menu {
+              margin: 20px 0 -0.5em 0;
+       }
+}
+
+@media (max-width: 575px) {
+       .breadcumb-menu {
+              min-width: 100%;
+              padding: 15px 70px;
+       }
+}
+
+@media (max-width: 767px) {
+       .breadcumb-wrapper {
+              padding: 80px 0 0 0;
+       }
+
+       .Formulaire {
+              padding: 0 0 0 0;
+       }
+
+       .container-fluid {
+              overflow: hidden;
+       }
+}
+
+@media (max-width: 991px) {
+       .breadcumb-wrapper {
+              padding: 80px 0 0 0;
+       }
+}
+
+@media (max-width: 1199px) {
+       .breadcumb-wrapper {
+              padding: 90px 0 0 0;
+       }
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+
+       display: none;
+}

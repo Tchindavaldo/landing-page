@@ -9,16 +9,16 @@
               <!-- Menu de navigation visible sur grand écran (non mobile) -->
               <div class="d-none d-lg-block">
                      <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                   <a class="nav-link" href="#">
+                            <li class="nav-item" [routerLink]="['/']">
+                                   <a class="nav-link">
                                           Maison</a>
                             </li>
-                            <li class="nav-item">
-                                   <a class="nav-link" href="#">
+                            <li class="nav-item" [routerLink]="['/tracking']">
+                                   <a class="nav-link">
                                           Paquet de suivi</a>
                             </li>
-                            <li class="nav-item">
-                                   <a class="nav-link" href="#">
+                            <li class="nav-item" [routerLink]="['/contact']">
+                                   <a class="nav-link">
                                           Contact</a>
                             </li>
                      </ul>
@@ -38,7 +38,7 @@
               <i class="fas fa-times"></i>
        </button>
        <div class="mobile-logo">
-              <a class="logo" href="https://logisticcargoexpress.com/">
+              <a class="logo">
                      <img
                             src="https://logisticcargoexpress.com/wp-content/uploads/2024/11/cc00a128f07627f362bdc7cfcd6ee4ef-removebg-preview.png"
                             alt="Logo" class="img-fluid">
@@ -46,16 +46,14 @@
        </div>
        <div class="themeholy-mobile-menu">
               <ul>
-                     <li><a href="https://logisticcargoexpress.com/"
+                     <li [routerLink]="['/']"><a
                                    aria-current="page"><i
                                           class="fas fa-arrow-right"></i>
                                    Maison</a></li>
-                     <li><a
-                                   href="https://logisticcargoexpress.com/track-form/"><i
+                     <li [routerLink]="['/tracking']"><a><i
                                           class="fas fa-arrow-right"></i> Paquet
                                    de suivi</a></li>
-                     <li><a
-                                   href="https://logisticcargoexpress.com/contact-2/"><i
+                     <li [routerLink]="['/contact']"><a><i
                                           class="fas fa-arrow-right"></i>
                                    Contact</a></li>
               </ul>

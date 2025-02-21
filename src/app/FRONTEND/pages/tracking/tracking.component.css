@@ -1,0 +1,115 @@
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+       /* Force table to not be like tables anymore */
+       table#wpcargo-track-table tr td input[type="text"],
+       table#wpcargo-track-table tr td input[type="submit"],
+       table#wpcargo-track-table tr td select,
+       table#wpcargo-track-table tr td textarea,
+       form table#wpcargo-track-table {
+              width: 100% !important;
+              min-width: 100%;
+       }
+
+       table#wpcargo-track-table,
+       #wpcargo-track-table thead,
+       #wpcargo-track-table tbody,
+       #wpcargo-track-table th,
+       #wpcargo-track-table td,
+       #wpcargo-track-table tr {
+              display: block;
+       }
+
+       /* Hide table headers (but not display: none;, for accessibility) */
+       #wpcargo-track-tablethead tr {
+              position: absolute;
+              top: -9999px;
+              left: -9999px;
+       }
+
+       #wpcargo-track-table tr {
+              margin: 0 0 1rem 0;
+       }
+
+       #wpcargo-track-table tr:nth-child(odd) {
+              background: #ccc;
+       }
+
+       #wpcargo-track-table td {
+              /* Behave  like a "row" */
+              border: none;
+              border-bottom: 1px solid #eee;
+              position: relative;
+              padding: 0;
+       }
+
+       #wpcargo-track-table td:before {
+              position: absolute;
+              top: 0;
+              left: 6px;
+              width: 45%;
+              padding-right: 10px;
+              white-space: nowrap;
+       }
+
+       #wpcargo-track-table .submit-track {
+              padding: 16px 0;
+       }
+}
+
+.submit-track {
+       border: 1px solid;
+       text-align: center;
+
+}
+
+td, th {
+       border: 1px solid #E0E0E0 !important;
+       padding: 9px 12px;
+}
+
+table.track_form_table tr td {
+       padding: 6px !important;
+}
+
+.btn {
+
+       width: 100%;
+}
+
+.btn input {
+
+       width: 75%;
+       color: #fff;
+       background-color: #00A924;
+       border-color: #00A924;
+       font-weight: 400;
+       height: 55px;
+       width: 100%;
+       border: none;
+
+       border-left: 0px solid !important;
+
+}
+
+.sendInput {
+
+       width: 65%;
+       align-items: center;
+}
+
+@media (max-width:700px) {
+
+
+       .sendInput {
+
+              width: 100%;
+       }
+}
+
+.sendInput input {
+       height: 75px;
+}
+
+section {
+       margin-top: 10%;
+}
