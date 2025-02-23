@@ -1,0 +1,189 @@
+.wpcargo div, #wpcargo-result div {
+       vertical-align: baseline;
+       background: transparent;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+#wpcargo-result-wrapper * {
+       font-family: Roboto, sans-serif !important;
+}
+
+@media (min-width: 1200px) {
+       .wpcargo-container {
+              max-width: 1140px;
+       }
+}
+
+@media (min-width: 992px) {
+       .wpcargo-container {
+              max-width: 960px;
+       }
+}
+
+@media (min-width: 768px) {
+       .wpcargo-container {
+              max-width: 720px;
+       }
+}
+
+@media (min-width: 576px) {
+       .wpcargo-container {
+              max-width: 540px;
+       }
+}
+
+.wpcargo-container, .wpcargo-container-fluid {
+       padding-right: 15px;
+       padding-left: 15px;
+       margin-right: auto;
+       margin-left: auto;
+       width: 100%;
+}
+
+#wpcargo-track-header {
+       margin: 18px 0;
+}
+
+#wpcargo-result-wrapper * {
+       font-family: Roboto, sans-serif !important;
+}
+
+#wpcargo-result .wpcargo-row {
+       margin-right: -15px;
+       margin-left: -15px;
+}
+
+.wpcargo div, #wpcargo-result div {
+       vertical-align: baseline;
+       background: transparent;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+#wpcargo-result-wrapper * {
+       font-family: Roboto, sans-serif !important;
+}
+
+@media (min-width: 768px) {
+       .wpcargo-col-md-6 {
+              flex: 0 0 50%;
+              max-width: 50%;
+       }
+}
+
+
+
+#wpcargo-result .wpcargo-row {
+       margin-right: -15px;
+       margin-left: -15px;
+}
+
+.wpcargo div, #wpcargo-result div {
+       vertical-align: baseline;
+       background: transparent;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+#wpcargo-result-wrapper * {
+       font-family: Roboto, sans-serif !important;
+}
+
+.wpcargo-row {
+       display: flex;
+       flex-wrap: wrap;
+       margin-right: -15px;
+       margin-left: -15px;
+}
+
+#shipment-status #result-status-header {
+       background-color: #ababab;
+       line-height: 1.3;
+       padding: 13px 0 12px;
+       color: #fff;
+       font-weight: 100;
+       text-transform: uppercase;
+       display: block;
+       width: 100%;
+}
+
+
+#wpcargo-result #shipment-info, #wpcargo-result #pq-info {
+       padding: 0 !important;
+}
+
+#wpcargo-result .wpcargo-row {
+       margin-right: -15px;
+       margin-left: -15px;
+}
+
+.wpcargo div, #wpcargo-result div {
+       vertical-align: baseline;
+       background: transparent;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+#wpcargo-result-wrapper * {
+       font-family: Roboto, sans-serif !important;
+}
+
+.wpcargo-row {
+       display: flex;
+       flex-wrap: wrap;
+       margin-right: -15px;
+       margin-left: -15px;
+}
+
+.wpcargo-table-responsive {
+       display: block;
+       width: 100%;
+       overflow-x: auto;
+       -webkit-overflow-scrolling: touch;
+       -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.wpcargo-wrap-details #shipment-info .wpcargo-label {
+       font-weight: 700;
+       margin: 0;
+}
+
+#wpcargo-result-wrapper * {
+       font-family: Roboto, sans-serif !important;
+}
+
+p {
+       font-family: Roboto, sans-serif !important;
+       margin: 0 0 18px 0;
+       color: #6F6E77;
+       line-height: 1.75;
+}
+
+#wpcargo-result .header-title {
+       border-bottom: 1px solid #858b89;
+       font-size: 1.2rem;
+       font-weight: bold;
+}
+
+#shipment-status #result-status-header {
+       background-color: #ababab;
+       line-height: 1.3;
+       padding: 13px 0 12px;
+       color: #fff;
+       font-weight: 100;
+       text-transform: uppercase;
+       display: block;
+       width: 100%;
+}
+
+.wpcargo-table thead th {
+       color: #fff;
+       background-color: #00A924;
+       border-color: #00A924;
+       border: 1px solid #eeeeee;
+}

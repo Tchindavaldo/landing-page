@@ -1,0 +1,25 @@
+.fa-thin, .fat {
+       font-family: Font Awesome\ 6 free;
+       font-weight: 100;
+}
+
+.header-layout4 .header-info .icon-btn {
+       width: auto;
+       height: auto;
+       color: #F68B21;
+       font-size: 28px;
+       border: none;
+}
+
+.header-layout4 .header-info {
+       display: -webkit-box;
+       display: -webkit-flex;
+       display: -ms-flexbox;
+       display: flex;
+       -webkit-box-align: center;
+       -webkit-align-items: center;
+       -ms-flex-align: center;
+       align-items: center;
+       gap: 15px;
+       height: 42px;
+}

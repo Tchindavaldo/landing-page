@@ -150,6 +150,17 @@
        transform: translateX(5px);
 }
 
-a{
+a {
        cursor: pointer;
+}
+
+
+/* Exemple d'animation personnalisée */
+.navbar {
+       transition: top 0.3s ease-in-out;
+}
+
+.navbar.sticky {
+       top: 0;
+       /* Garde la navbar collée en haut */
 }

@@ -11,7 +11,7 @@
                                           <div class="wpcargo-track wpcargo">
                                                  <form method="post"
                                                         name="wpcargo-track-form"
-                                                        action>
+                                                        (ngSubmit)="onSearch()">
                                                         <input type="hidden"
                                                                id="track_shipment_nonce"
                                                                name="track_shipment_nonce"
@@ -43,7 +43,7 @@
                                                                                            class="input_track_num form-control"
                                                                                            type="text"
                                                                                            name="wpcargo_tracking_number"
-                                                                                           value
+                                                                                           [(ngModel)]="trackingNumber"
                                                                                            autocomplete="off"
                                                                                            placeholder="Entrez le numéro de suivi"
                                                                                            required>
@@ -77,4 +77,8 @@
                      </div>
               </div>
        </div>
+
+       <!-- Affichage conditionnel du loader et du composant -->
+       <div *ngIf="isLoading" class="loader">Chargement...</div>
+       <app-data *ngIf="!isLoading && showData"></app-data>
 </section>
