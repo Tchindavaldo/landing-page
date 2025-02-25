@@ -186,4 +186,7 @@ p {
        background-color: #00A924;
        border-color: #00A924;
        border: 1px solid #eeeeee;
+
+       padding: 15px 121px 15px 5px;
+       white-space: nowrap;
 }
