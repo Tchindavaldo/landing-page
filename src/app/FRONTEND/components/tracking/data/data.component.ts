@@ -37,12 +37,14 @@ export class DataComponent implements OnInit
               if ( foundItem )
               {
                      this.existingItem = true;
+                     console.log( 'found item', foundItem );
 
-                     // Remplir les champs avec les valeurs récupérées
-                     this.fillForm( foundItem );
-
-                     // Rendre les champs non modifiables
-                     this.setInputsReadonly();
+                     // Attendre que le DOM soit prêt avant de remplir le formulaire
+                     setTimeout( () =>
+                     {
+                            this.fillForm( foundItem );
+                            this.setInputsReadonly();
+                     }, 500 ); // Attente de 500ms pour s'assurer que le DOM est prêt
               }
        }
 
@@ -265,7 +267,11 @@ export class DataComponent implements OnInit
                      if ( inputElement )
                      {
                             inputElement.readOnly = true;
+                            inputElement.style.border = "none";  // Supprime la bordure
+                            inputElement.style.outline = "none"; // Supprime le contour bleu lors du focus
+                            inputElement.style.backgroundColor = "transparent"; // Facultatif : rendre l'arrière-plan transparent
                      }
-              } )
+              } );
        }
+
 }
