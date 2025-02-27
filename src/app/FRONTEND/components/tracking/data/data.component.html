@@ -1,27 +1,29 @@
-<div id="wpcargo-result-wrapper" class="container">
+<div *ngIf="existingItem" id="wpcargo-result-wrapper"
+       class="container">
        <div class="wpcargo-result wpcargo card" id="wpcargo-result">
               <script>
-            function wpcargo_print(wpcargo_class) {
-                var printContents = document.getElementById(wpcargo_class).innerHTML;
-                var headstr = "<html><head><title></title></head><body data-rsssl=1>";
-                var footstr = "</body></html>";
-                var originalContents = document.body.innerHTML;
-                document.body.innerHTML = headstr + printContents + footstr;
-                window.print();
-                document.body.innerHTML = originalContents;
-                location.reload(true);
-            }
-        </script>
+      function wpcargo_print(wpcargo_class) {
+        var printContents = document.getElementById(wpcargo_class).innerHTML;
+        var headstr = "<html><head><title></title></head><body data-rsssl=1>";
+        var footstr = "</body></html>";
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = headstr + printContents + footstr;
+        window.print();
+        document.body.innerHTML = originalContents;
+        location.reload(true);
+      }
+    </script>
               <style>
-            a:link:after, a:visited:after {
-                content: "";
-            }
-            .noprint {
-                display: none !important;
-            }
-        </style>
-              <div class="wpcargo-print-btn  my-3">
-                     <button class="btn "
+      a:link:after,
+      a:visited:after {
+        content: "";
+      }
+      .noprint {
+        display: none !important;
+      }
+    </style>
+              <div class="wpcargo-print-btn my-3">
+                     <button class="btn"
                             style="background-color: #00A924;color: white;"
                             (click)="imprimerFiche()">
                             Imprimer le résultat de la piste
@@ -52,408 +54,719 @@
                                           class="header-title font-weight-bold">Informations
                                           sur l'expéditeur</p>
                                    <div class="mb-3">
-
                                           <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
+                                                 class="form-control" id="nom"
                                                  placeholder="FRANCOIS PHILEMON">
                                           <br>
                                           <input type="text"
                                                  class="form-control"
-                                                 id="exampleInput"
+                                                 id="adresse"
                                                  placeholder="91120 ESSONNE 3EME RUE DE LA PIEVOLEUSE">
                                           <br>
                                           <input type="text"
                                                  class="form-control"
-                                                 id="exampleInput"
+                                                 id="postal"
                                                  placeholder="0756857180">
                                           <br>
                                           <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
+                                                 class="form-control" id="email"
                                                  placeholder="philemonfrancois547@gmail.com">
                                    </div>
-
                             </div>
                             <div class="col-md-6">
                                    <p
                                           class="header-title font-weight-bold">Informations
                                           sur le récepteur</p>
-                                   <input type="text"
-                                          class="form-control"
-                                          id="exampleInput"
+                                   <input type="text" class="form-control"
+                                          id="receiverName"
                                           placeholder="M. Radford J Milton">
                                    <br>
-                                   <input type="text"
-                                          class="form-control"
-                                          id="exampleInput"
+                                   <input type="text" class="form-control"
+                                          id="receiverAddress"
                                           placeholder="98 Brae Road High Wycombe Australie occidentale">
                                    <br>
-                                   <input type="text"
-                                          class="form-control"
-                                          id="exampleInput"
+                                   <input type="text" class="form-control"
+                                          id="receiverPhone"
                                           placeholder="+61475263397">
                                    <br>
-                                   <input type="text"
-                                          class="form-control"
-                                          id="exampleInput"
+                                   <input type="text" class="form-control"
+                                          id="receiverEmail"
                                           placeholder="radfordmiltonhotmail.co.uk">
-
-                                   <!-- <p class="receiver details">M. Radford J
-                                          Milton<br>98 Brae Road High Wycombe
-                                          Australie occidentale
-                                          6057<br>+61475263397<br>radfordmilton&#64;hotmail.co.uk</p>
-                            </div> -->
                             </div>
-                            <div id="shipment-status"
-                                   class="row text-center my-3">
-                                   <p id="result-status-header"
-                                          class="font-weight-bold">Statut de
-                                          l'expédition :
-                                          En route</p>
-                            </div>
-                            <div id="shipment-info" class="row">
-                                   <div class="col-md-12">
-                                          <p
-                                                 class="header-title font-weight-bold">Informations
-                                                 sur l'expédition</p>
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Origine:</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">France</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="France">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Emballer:</p>
-                                          <!-- <p class="wpcargo-label-info">1</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="1">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Statut:</p>
-                                          <!-- <p class="wpcargo-label-info">En
-                                                 route</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="En route">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p
-                                                 class="wpcargo-label">Destination:</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">Australie</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="Australie">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p
-                                                 class="wpcargo-label">Transporteur:</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">logistique
-                                                 de
-                                                 transport aérien de colis</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="Logistique de transport aerien de colis">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Type
-                                                 d'expédition
-                                                 :</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">Expédition
-                                                 internationale</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="Expedition internationale">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Poids:</p>
-                                          <!-- <p class="wpcargo-label-info">30
-                                                 kg</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="30 Kg">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Mode
-                                                 d'expédition
-                                                 :</p>
-                                          <!-- <p class="wpcargo-label-info"></p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="Entrer le mode">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Numéro de
-                                                 référence
-                                                 du transporteur :</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">C654783684673</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="C654783684673">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Produit:</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">INTÉRIEUR
-                                                 COMPLET GOLF</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="Interieure complet Golf">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Qté :</p>
-                                          <!-- <p class="wpcargo-label-info">1</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="1">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Mode de
-                                                 paiement
-                                                 :</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">ESPÈCES</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="Especes">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Fret total
-                                                 :</p>
-                                          <!-- <p class="wpcargo-label-info">120
-                                                 euros</p> -->
-
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="120 Euro">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Date de
-                                                 livraison
-                                                 prévue :</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">20/02/2025</p> -->
-
-                                          <input type="date"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder>
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Heure de
-                                                 départ:</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">21h00</p> -->
-
-                                          <input type="time"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="12h">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Date de
-                                                 retrait
-                                                 :</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">17/02/2025</p> -->
-
-                                          <br>
-                                          <input type="date"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="entrer le date ">
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="wpcargo-label">Heure de
-                                                 prise en
-                                                 charge :</p>
-                                          <!-- <p
-                                                 class="wpcargo-label-info">16h00</p> -->
-
-                                          <br>
-                                          <input type="time"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder>
-                                   </div>
-                                   <div class="col-md-12">
-                                          <p
-                                                 class="wpcargo-label">Commentaires:</p>
-                                          <!-- <p class="wpcargo-label-info"></p> -->
-
-                                          <br>
-                                          <input type="text"
-                                                 class="form-control"
-                                                 id="exampleInput"
-                                                 placeholder="entrer le commentaire">
-                                   </div>
-                            </div>
-                            <div id="wpc-multiple-package"
-                                   class="table-responsive my-3">
+                     </div>
+                     <div id="shipment-status" class="row text-center my-3">
+                            <p id="result-status-header"
+                                   class="font-weight-bold">Statut de
+                                   l'expédition : En route</p>
+                     </div>
+                     <div id="shipment-info" class="row">
+                            <div class="col-md-12">
                                    <p
-                                          class="header-title font-weight-bold">Paquets</p>
-                                   <table
-                                          class="table table-bordered wpcargo-table">
-                                          <thead>
-                                                 <tr>
-                                                        <th>Qté.</th>
-                                                        <th>Type de pièce</th>
-                                                        <th>Description</th>
-                                                        <th>Longueur (cm)</th>
-                                                        <th>Largeur (cm)</th>
-                                                        <th>Hauteur (cm)</th>
-                                                        <th>Poids (kg)</th>
-                                                 </tr>
-                                          </thead>
-                                          <tbody>
-                                                 <tr>
-                                                        <!-- <td>1</td>
-                                                        <td>Palette</td>
-                                                        <td>RAS</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td> -->
-
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="1"
-                                                                      value="1"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="Palette"
-                                                                      value="Palette"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="RAS"
-                                                                      value="RAS"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="Longueur en cm"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="Largeur en cm"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="Hauteur en cm"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="Poids en kg"></td>
-                                                 </tr>
-                                          </tbody>
-                                   </table>
+                                          class="header-title font-weight-bold">Informations
+                                          sur l'expédition</p>
                             </div>
-                            <div id="package-weight-info"
-                                   class="row text-center my-3">
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="font-weight-bold"
-                                                 style="display: flex;text-align: left;">Poids
-                                                 volumétrique total : <span
-                                                        id="package_volumetric">
-
-                                                        <!-- 0,00 -->
-
-                                                        <input
-                                                               style="    width: 100px;margin: 0 11px;height: 30px;"
-                                                               type="text"
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Origine:</p>
+                                   <input type="text" class="form-control"
+                                          id="origin" placeholder="France">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Emballer:</p>
+                                   <input type="text" class="form-control"
+                                          id="packageCount" placeholder="1">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Statut:</p>
+                                   <input type="text" class="form-control"
+                                          id="status" placeholder="En route">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Destination:</p>
+                                   <input type="text" class="form-control"
+                                          id="destination"
+                                          placeholder="Australie">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Transporteur:</p>
+                                   <input type="text" class="form-control"
+                                          id="carrier"
+                                          placeholder="Logistique de transport aerien de colis">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Type d'expédition
+                                          :</p>
+                                   <input type="text" class="form-control"
+                                          id="shipmentType"
+                                          placeholder="Expedition internationale">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Poids:</p>
+                                   <input type="text" class="form-control"
+                                          id="weight" placeholder="30 Kg">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Mode d'expédition
+                                          :</p>
+                                   <input type="text" class="form-control"
+                                          id="shipmentMode"
+                                          placeholder="Entrer le mode">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Numéro de référence
+                                          du transporteur :</p>
+                                   <input type="text" class="form-control"
+                                          id="carrierReference"
+                                          placeholder="C654783684673">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Produit:</p>
+                                   <input type="text" class="form-control"
+                                          id="product"
+                                          placeholder="Interieure complet Golf">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Qté :</p>
+                                   <input type="text" class="form-control"
+                                          id="quantity" placeholder="1">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Mode de paiement
+                                          :</p>
+                                   <input type="text" class="form-control"
+                                          id="paymentMode"
+                                          placeholder="Especes">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Fret total :</p>
+                                   <input type="text" class="form-control"
+                                          id="totalFreight"
+                                          placeholder="120 Euro">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Date de livraison
+                                          prévue :</p>
+                                   <input type="date" class="form-control"
+                                          id="deliveryDate">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Heure de départ:</p>
+                                   <input type="time" class="form-control"
+                                          id="departureTime" placeholder="12h">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Date de retrait
+                                          :</p>
+                                   <input type="date" class="form-control"
+                                          id="pickupDate">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Heure de prise en
+                                          charge :</p>
+                                   <input type="time" class="form-control"
+                                          id="pickupTime">
+                            </div>
+                            <div class="col-md-12">
+                                   <p class="wpcargo-label">Commentaires:</p>
+                                   <input type="text" class="form-control"
+                                          id="comments"
+                                          placeholder="entrer le commentaire">
+                            </div>
+                     </div>
+                     <div id="wpc-multiple-package"
+                            class="table-responsive my-3">
+                            <p class="header-title font-weight-bold">Paquets</p>
+                            <table class="table table-bordered wpcargo-table">
+                                   <thead>
+                                          <tr>
+                                                 <th>Qté.</th>
+                                                 <th>Type de pièce</th>
+                                                 <th>Description</th>
+                                                 <th>Longueur (cm)</th>
+                                                 <th>Largeur (cm)</th>
+                                                 <th>Hauteur (cm)</th>
+                                                 <th>Poids (kg)</th>
+                                          </tr>
+                                   </thead>
+                                   <tbody>
+                                          <tr>
+                                                 <td><input type="text"
                                                                class="form-control"
-                                                               id="exampleInput"
-                                                               placeholder="0,00">
-
-                                                 </span>
-                                                 kg.</p>
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="font-weight-bold"
-                                                 style="display: flex;text-align: left;">Volume
-                                                 total :
-                                                 <span
-                                                        id="package_volume">
-                                                        <!-- 0,00 -->
-                                                        <input
-                                                               style="    width: 100px;margin: 0 11px;height: 30px;"
-                                                               type="text"
+                                                               id="packageQuantity"
+                                                               placeholder="1"></td>
+                                                 <td><input type="text"
                                                                class="form-control"
-                                                               id="exampleInput"
-                                                               placeholder="0,00">
-                                                 </span>
-                                                 m³</p>
-                                   </div>
-                                   <div class="col-md-4">
-                                          <br>
-                                          <p class="font-weight-bold"
-                                                 style="display: flex;text-align: left;">Poids
-                                                 réel
-                                                 total
-                                                 : <span
-                                                        id="package_actual_weight">
-                                                        <!-- 0,00 -->
-
-                                                        <input
-                                                               style="    width: 100px;margin: 0 11px;height: 30px;"
-                                                               type="text"
+                                                               id="pieceType"
+                                                               placeholder="Palette"></td>
+                                                 <td><input type="text"
                                                                class="form-control"
-                                                               id="exampleInput"
-                                                               placeholder="0,00">
+                                                               id="pieceDescription"
+                                                               placeholder="RAS"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceLength"
+                                                               placeholder="Longueur en cm"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceWidth"
+                                                               placeholder="Largeur en cm"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceHeight"
+                                                               placeholder="Hauteur en cm"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceWeight"
+                                                               placeholder="Poids en kg"></td>
+                                          </tr>
 
-                                                 </span>
-                                                 kg.</p>
+                                   </tbody>
+                            </table>
+                     </div>
+                     <div id="package-weight-info" class="row text-center my-3">
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="font-weight-bold"
+                                          style="display: flex;text-align: left;">Poids
+                                          volumétrique total : <span
+                                                 id="package_volumetric">
+                                                 <input
+                                                        style="width: 100px;margin: 0 11px;height: 30px;"
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="volumetricWeight"
+                                                        placeholder="0,00">
+                                          </span> kg.</p>
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="font-weight-bold"
+                                          style="display: flex;text-align: left;">Volume
+                                          total : <span id="package_volume">
+                                                 <input
+                                                        style="width: 100px;margin: 0 11px;height: 30px;"
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="totalVolume"
+                                                        placeholder="0,00">
+                                          </span> m³</p>
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="font-weight-bold"
+                                          style="display: flex;text-align: left;">Poids
+                                          réel total : <span
+                                                 id="package_actual_weight">
+                                                 <input
+                                                        style="width: 100px;margin: 0 11px;height: 30px;"
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="actualWeight"
+                                                        placeholder="0,00">
+                                          </span> kg.</p>
+                            </div>
+                     </div>
+                     <div id="wpcargo-history-section"
+                            class="table-responsive my-3">
+                            <p class="header-title font-weight-bold">Historique
+                                   des expéditions</p>
+                            <table class="table table-bordered wpcargo-table">
+                                   <thead>
+                                          <tr>
+                                                 <th>Date</th>
+                                                 <th>Temps</th>
+                                                 <th>Emplacement</th>
+                                                 <th>Statut</th>
+                                                 <th>Mis à jour par</th>
+                                                 <th>Remarques</th>
+                                          </tr>
+                                   </thead>
+                                   <tbody>
+                                          <tr>
+                                                 <td><input type="date"
+                                                               class="form-control"
+                                                               id="historyDate"
+                                                               placeholder="17/02/2025"></td>
+                                                 <td><input type="time"
+                                                               class="form-control"
+                                                               id="historyTime"
+                                                               placeholder="16h32"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="historyLocation"
+                                                               placeholder="91120 ESSONNE 3EME RUE DE LA PIEVOLEUSE"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="historyStatus"
+                                                               placeholder="En route"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="historyUpdatedBy"
+                                                               placeholder="logistique"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="historyRemarks"
+                                                               placeholder="Remarques"></td>
+                                          </tr>
+
+                                   </tbody>
+                            </table>
+                     </div>
+              </div>
+       </div>
+
+       <!-- Bouton Enregistrer les données -->
+       <div *ngIf="!existingItem && isAdmin" class="text-center my-3">
+              <button class="btn btn-primary" (click)="saveData()">Enregistrer
+                     les données</button>
+       </div>
+</div>
+<div *ngIf="!existingItem && isAdmin" id="wpcargo-result-wrapper"
+       class="container">
+       <div class="wpcargo-result wpcargo card" id="wpcargo-result">
+              <script>
+      function wpcargo_print(wpcargo_class) {
+        var printContents = document.getElementById(wpcargo_class).innerHTML;
+        var headstr = "<html><head><title></title></head><body data-rsssl=1>";
+        var footstr = "</body></html>";
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = headstr + printContents + footstr;
+        window.print();
+        document.body.innerHTML = originalContents;
+        location.reload(true);
+      }
+    </script>
+              <style>
+      a:link:after,
+      a:visited:after {
+        content: "";
+      }
+      .noprint {
+        display: none !important;
+      }
+    </style>
+              <div class="wpcargo-print-btn my-3">
+                     <button class="btn"
+                            style="background-color: #00A924;color: white;"
+                            (click)="imprimerFiche()">
+                            Imprimer le résultat de la piste
+                     </button>
+              </div>
+              <div id="wpcargo-result-print"
+                     class="wpcargo-wrap-details card-body">
+                     <div id="wpcargo-track-header" class="text-center mb-4">
+                            <div class="comp_logo mb-3">
+                                   <img
+                                          src="https://logisticcargoexpress.com/wp-content/uploads/2024/11/cc00a128f07627f362bdc7cfcd6ee4ef-removebg-preview.png"
+                                          class="img-fluid" alt="Logo">
+                            </div>
+                            <div class="b_code mb-3">
+                                   <img
+                                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAA8CAQAAACpvmLnAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAANVJREFUeNrt0DGOAkEMAEGL///ZFyDghgWiCrsCdsR6rVHP7OzM7Mzz9356/P96vt7vv9Nc5s6N5+ZvW/bHznPLdXKP0/ndeaPrzfbDDb/NvteYt7mdvU2gclLlpMpJlZMqJ1VOqpxUOalyUuWkykmVkyonVU6qnFQ5qXJS5aTKSZWTKidVTqqcVDmpclLlpMpJlZMqJ1VOqpxUOalyUuWkykmVkyonVU6qnFQ5qXJS5aTKSZWTKidVTqqcVDmpclLlpMpJlZMqJ1VOqpxUOalyUuWk/gAViFodHlE/0wAAAABJRU5ErkJggg=="
+                                          alt="PF063362295612-L"
+                                          class="img-fluid">
+                            </div>
+                            <div class="shipment-number">
+                                   <span
+                                          class="wpcargo-title font-weight-bold">PF063362295612-L</span>
+                            </div>
+                     </div>
+                     <div id="shipper-info" class="row">
+                            <div class="col-md-6">
+                                   <p
+                                          class="header-title font-weight-bold">Informations
+                                          sur l'expéditeur</p>
+                                   <div class="mb-3">
+                                          <input type="text"
+                                                 class="form-control" id="nom"
+                                                 placeholder="FRANCOIS PHILEMON">
+                                          <br>
+                                          <input type="text"
+                                                 class="form-control"
+                                                 id="adresse"
+                                                 placeholder="91120 ESSONNE 3EME RUE DE LA PIEVOLEUSE">
+                                          <br>
+                                          <input type="text"
+                                                 class="form-control"
+                                                 id="postal"
+                                                 placeholder="0756857180">
+                                          <br>
+                                          <input type="text"
+                                                 class="form-control" id="email"
+                                                 placeholder="philemonfrancois547@gmail.com">
                                    </div>
                             </div>
+                            <div class="col-md-6">
+                                   <p
+                                          class="header-title font-weight-bold">Informations
+                                          sur le récepteur</p>
+                                   <input type="text" class="form-control"
+                                          id="receiverName"
+                                          placeholder="M. Radford J Milton">
+                                   <br>
+                                   <input type="text" class="form-control"
+                                          id="receiverAddress"
+                                          placeholder="98 Brae Road High Wycombe Australie occidentale">
+                                   <br>
+                                   <input type="text" class="form-control"
+                                          id="receiverPhone"
+                                          placeholder="+61475263397">
+                                   <br>
+                                   <input type="text" class="form-control"
+                                          id="receiverEmail"
+                                          placeholder="radfordmiltonhotmail.co.uk">
+                            </div>
+                     </div>
+                     <div id="shipment-status" class="row text-center my-3">
+                            <p id="result-status-header"
+                                   class="font-weight-bold">Statut de
+                                   l'expédition : En route</p>
+                     </div>
+                     <div id="shipment-info" class="row">
+                            <div class="col-md-12">
+                                   <p
+                                          class="header-title font-weight-bold">Informations
+                                          sur l'expédition</p>
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Origine:</p>
+                                   <input type="text" class="form-control"
+                                          id="origin" placeholder="France">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Emballer:</p>
+                                   <input type="text" class="form-control"
+                                          id="packageCount" placeholder="1">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Statut:</p>
+                                   <input type="text" class="form-control"
+                                          id="status" placeholder="En route">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Destination:</p>
+                                   <input type="text" class="form-control"
+                                          id="destination"
+                                          placeholder="Australie">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Transporteur:</p>
+                                   <input type="text" class="form-control"
+                                          id="carrier"
+                                          placeholder="Logistique de transport aerien de colis">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Type d'expédition
+                                          :</p>
+                                   <input type="text" class="form-control"
+                                          id="shipmentType"
+                                          placeholder="Expedition internationale">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Poids:</p>
+                                   <input type="text" class="form-control"
+                                          id="weight" placeholder="30 Kg">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Mode d'expédition
+                                          :</p>
+                                   <input type="text" class="form-control"
+                                          id="shipmentMode"
+                                          placeholder="Entrer le mode">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Numéro de référence
+                                          du transporteur :</p>
+                                   <input type="text" class="form-control"
+                                          id="carrierReference"
+                                          placeholder="C654783684673">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Produit:</p>
+                                   <input type="text" class="form-control"
+                                          id="product"
+                                          placeholder="Interieure complet Golf">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Qté :</p>
+                                   <input type="text" class="form-control"
+                                          id="quantity" placeholder="1">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Mode de paiement
+                                          :</p>
+                                   <input type="text" class="form-control"
+                                          id="paymentMode"
+                                          placeholder="Especes">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Fret total :</p>
+                                   <input type="text" class="form-control"
+                                          id="totalFreight"
+                                          placeholder="120 Euro">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Date de livraison
+                                          prévue :</p>
+                                   <input type="date" class="form-control"
+                                          id="deliveryDate">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Heure de départ:</p>
+                                   <input type="time" class="form-control"
+                                          id="departureTime" placeholder="12h">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Date de retrait
+                                          :</p>
+                                   <input type="date" class="form-control"
+                                          id="pickupDate">
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="wpcargo-label">Heure de prise en
+                                          charge :</p>
+                                   <input type="time" class="form-control"
+                                          id="pickupTime">
+                            </div>
+                            <div class="col-md-12">
+                                   <p class="wpcargo-label">Commentaires:</p>
+                                   <input type="text" class="form-control"
+                                          id="comments"
+                                          placeholder="entrer le commentaire">
+                            </div>
+                     </div>
+                     <div id="wpc-multiple-package"
+                            class="table-responsive my-3">
+                            <p class="header-title font-weight-bold">Paquets</p>
+                            <table class="table table-bordered wpcargo-table">
+                                   <thead>
+                                          <tr>
+                                                 <th>Qté.</th>
+                                                 <th>Type de pièce</th>
+                                                 <th>Description</th>
+                                                 <th>Longueur (cm)</th>
+                                                 <th>Largeur (cm)</th>
+                                                 <th>Hauteur (cm)</th>
+                                                 <th>Poids (kg)</th>
+                                          </tr>
+                                   </thead>
+                                   <tbody>
+                                          <tr>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="packageQuantity"
+                                                               placeholder="1"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceType"
+                                                               placeholder="Palette"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceDescription"
+                                                               placeholder="RAS"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceLength"
+                                                               placeholder="Longueur en cm"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceWidth"
+                                                               placeholder="Largeur en cm"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceHeight"
+                                                               placeholder="Hauteur en cm"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="pieceWeight"
+                                                               placeholder="Poids en kg"></td>
+                                          </tr>
 
-                            <div id="shmap-wrapper" style="margin: 12px 0;">
+                                   </tbody>
+                            </table>
+                     </div>
+                     <div id="package-weight-info" class="row text-center my-3">
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="font-weight-bold"
+                                          style="display: flex;text-align: left;">Poids
+                                          volumétrique total : <span
+                                                 id="package_volumetric">
+                                                 <input
+                                                        style="width: 100px;margin: 0 11px;height: 30px;"
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="volumetricWeight"
+                                                        placeholder="0,00">
+                                          </span> kg.</p>
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="font-weight-bold"
+                                          style="display: flex;text-align: left;">Volume
+                                          total : <span id="package_volume">
+                                                 <input
+                                                        style="width: 100px;margin: 0 11px;height: 30px;"
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="totalVolume"
+                                                        placeholder="0,00">
+                                          </span> m³</p>
+                            </div>
+                            <div class="col-md-4">
+                                   <br>
+                                   <p class="font-weight-bold"
+                                          style="display: flex;text-align: left;">Poids
+                                          réel total : <span
+                                                 id="package_actual_weight">
+                                                 <input
+                                                        style="width: 100px;margin: 0 11px;height: 30px;"
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="actualWeight"
+                                                        placeholder="0,00">
+                                          </span> kg.</p>
+                            </div>
+                     </div>
+                     <div id="wpcargo-history-section"
+                            class="table-responsive my-3">
+                            <p class="header-title font-weight-bold">Historique
+                                   des expéditions</p>
+                            <table class="table table-bordered wpcargo-table">
+                                   <thead>
+                                          <tr>
+                                                 <th>Date</th>
+                                                 <th>Temps</th>
+                                                 <th>Emplacement</th>
+                                                 <th>Statut</th>
+                                                 <th>Mis à jour par</th>
+                                                 <th>Remarques</th>
+                                          </tr>
+                                   </thead>
+                                   <tbody>
+                                          <tr>
+                                                 <td><input type="date"
+                                                               class="form-control"
+                                                               id="historyDate"
+                                                               placeholder="17/02/2025"></td>
+                                                 <td><input type="time"
+                                                               class="form-control"
+                                                               id="historyTime"
+                                                               placeholder="16h32"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="historyLocation"
+                                                               placeholder="91120 ESSONNE 3EME RUE DE LA PIEVOLEUSE"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="historyStatus"
+                                                               placeholder="En route"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="historyUpdatedBy"
+                                                               placeholder="logistique"></td>
+                                                 <td><input type="text"
+                                                               class="form-control"
+                                                               id="historyRemarks"
+                                                               placeholder="Remarques"></td>
+                                          </tr>
+
+                                   </tbody>
+                            </table>
+                     </div>
+              </div>
+       </div>
+
+       <!-- Bouton Enregistrer les données -->
+       <div *ngIf="!existingItem && isAdmin" class="text-center my-3">
+              <button class="btn btn-primary" (click)="saveData()">Enregistrer
+                     les données</button>
+       </div>
+</div>
+<div *ngIf="!existingItem && !isAdmin" id="wpcargo-result-wrapper"
+       class="container">
+
+       <h3>Aucune donné associer a ce matricule</h3>
+</div>
+
+<div *ngIf="isAdding" class="loader ">ajout en cour</div>
+<div *ngIf="isAdded" class="loader isAdded">ajout reussi</div>
+<div *ngIf="isErrorAdd" class="loader isErrorAdd">erreur lors de l'ajout</div>
+<div *ngIf="isErrorMat" class="loader isErrorMat">le matricule existe deja</div>
+<!-- <div id="shmap-wrapper" style="margin: 12px 0;">
                                    <div id="wpcargo-shmap"
                                           style="height: 320px; position: relative; overflow: hidden;"><div
                                                  style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div><button
@@ -1125,64 +1438,4 @@
                                                                                            une
                                                                                            erreur
                                                                                            cartographique</a></div></div></div></div></div></div></div>
-                            </div>
-
-                            <div id="wpcargo-history-section"
-                                   class="table-responsive my-3">
-                                   <p
-                                          class="header-title font-weight-bold">Historique
-                                          des expéditions</p>
-                                   <table
-                                          class="table table-bordered wpcargo-table">
-                                          <thead>
-                                                 <tr>
-                                                        <th>Date</th>
-                                                        <th>Temps</th>
-                                                        <th>Emplacement</th>
-                                                        <th>Statut</th>
-                                                        <th>Mis à jour par</th>
-                                                        <th>Remarques</th>
-                                                 </tr>
-                                          </thead>
-                                          <tbody>
-                                                 <tr>
-                                                        <!-- <td>17/02/2025</td>
-                                                        <td>16h32</td>
-                                                        <td>91120 ESSONNE 3EME
-                                                               RUE DE
-                                                               LA
-                                                               PIEVOLEUSE</td>
-                                                        <td>En route</td>
-                                                        <td>logistique</td>
-                                                        <td></td> -->
-
-                                                        <td><input type="date"
-                                                                      class="form-control"
-                                                                      placeholder="17/02/2025"
-                                                                      value="17/02/2025"></td>
-                                                        <td><input type="time"
-                                                                      class="form-control"
-                                                                      placeholder="16h32"
-                                                                      value="16h32"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="91120 ESSONNE 3EME RUE DE LA PIEVOLEUSE"
-                                                                      value="91120 ESSONNE 3EME RUE DE LA PIEVOLEUSE"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="En route"
-                                                                      value="En route"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="logistique"
-                                                                      value="logistique"></td>
-                                                        <td><input type="text"
-                                                                      class="form-control"
-                                                                      placeholder="Remarques"></td>
-                                                 </tr>
-                                          </tbody>
-                                   </table>
-                            </div>
-                     </div>
-              </div>
-       </div>
+                            </div> -->

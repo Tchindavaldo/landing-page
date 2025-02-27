@@ -80,5 +80,6 @@
 
        <!-- Affichage conditionnel du loader et du composant -->
        <div *ngIf="isLoading" class="loader">Chargement...</div>
-       <app-data *ngIf="!isLoading && showData"></app-data>
+       <app-data [isAdmin]="isAdmin" [idget]="trackingNumber"
+              *ngIf="!isLoading && showData"></app-data>
 </section>

@@ -190,3 +190,50 @@ p {
        padding: 15px 121px 15px 5px;
        white-space: nowrap;
 }
+
+
+/* Style pour le loader */
+.loader {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       font-size: 1.5rem;
+       font-weight: bold;
+}
+
+.loader {
+       position: fixed;
+       /* Positionne-le de manière fixe */
+       top: 50%;
+       /* Le centrer verticalement */
+       left: 50%;
+       /* Le centrer horizontalement */
+       transform: translate(-50%, -50%);
+       /* Ajuste le positionnement pour être exactement centré */
+       z-index: 9999;
+       /* S'assurer que le loader est au-dessus des autres éléments */
+       background-color: rgba(0, 0, 0, 1);
+       /* Fond semi-transparent pour le loader */
+       color: white;
+       /* Texte en blanc */
+       padding: 20px;
+       /* Espacement autour du texte */
+       border-radius: 5px;
+       /* Coins arrondis pour le loader */
+       font-size: 18px;
+       /* Taille de la police */
+       text-align: center;
+       /* Centrer le texte */
+}
+
+
+.isErrorMat, .isErrorAdd {
+
+       background-color: rgb(165, 21, 21);
+}
+
+.isAdded {
+
+       background-color: rgb(9, 147, 39);
+}

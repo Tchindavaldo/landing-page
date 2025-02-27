@@ -23,7 +23,8 @@ export class FirestoreService
               const colRef = collection( this.firestore, collectionName );
               console.log( 'col ref', colRef );
 
-              return collectionData( colRef, { idField: 'id' } ) as Observable<any[]>;
+              // return collectionData( colRef, { idField: 'id' } ) as Observable<any[]>;
+              return collectionData( colRef ) as Observable<any[]>;
        }
 
        // Mettre à jour un document
